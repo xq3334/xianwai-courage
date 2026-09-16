@@ -1,0 +1,13 @@
+{
+  "name": "xianwai-book1",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "线外 · 第一部：被讨厌的勇气 —— 静态叙事选择游戏，无构建步骤",
+  "scripts": {
+    "serve": "node serve.mjs 8090",
+    "validate": "node validate-chapters.mjs",
+    "simulate": "node simulate-playthrough.mjs",
+    "test": "node validate-chapters.mjs && node simulate-playthrough.mjs"
+  }
+}

@@ -1,0 +1,103 @@
+:root {
+  --paper: #f4efe2;
+  --paper-deep: #eae2cf;
+  --ink: #26221d;
+  --ink-soft: #56504a;
+  --ink-faint: #8d857b;
+  --rule: #c9bfa8;
+  --accent-clay: #a24b38;
+  --accent-slate: #4a6572;
+  --accent-ochre: #b58a3c;
+  --shadow: rgba(38, 34, 29, 0.16);
+  --serif: "Songti SC", "SimSun", "Noto Serif SC", "Source Han Serif SC", Georgia, serif;
+  --sans: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  overflow: hidden;
+  background-image:
+    radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.55), transparent 42%),
+    radial-gradient(circle at 82% 84%, rgba(201, 191, 168, 0.32), transparent 46%);
+}
+
+/* 纸张颗粒：用 SVG 噪声滤镜叠一层极淡的纹理 */
+#paper-grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.32;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+}
+
+#app {
+  position: relative;
+  height: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+/* 标题按钮 */
+.ink-button {
+  display: block;
+  width: 100%;
+  margin: 0.7rem 0;
+  padding: 0.85rem 1.4rem;
+  border: 1.5px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.ink-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--ink);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.ink-button:hover::before {
+  opacity: 0.05;
+}
+
+.ink-button:active {
+  transform: translateY(1px);
+}
+
+/* 屏幕切换 */
+.screen {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.screen.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+button:focus-visible {
+  outline: 2px solid var(--accent-slate);
+  outline-offset: 3px;
+}

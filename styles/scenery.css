@@ -1,0 +1,109 @@
+/* 场景画面：用多层渐变堆叠出真实的空间感、光线和景深，不依赖图片文件 */
+
+.scene-image {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.scene-image::before {
+  content: '';
+  position: absolute;
+  inset: -6%;
+  background: inherit;
+  animation: scene-breathe 42s ease-in-out infinite;
+}
+
+/* 每个场景一套配色和光位 */
+
+/* 教室：午后斜阳从右侧高窗打进来 */
+.scene-classroom {
+  background:
+    /* 窗外的天光 */
+    radial-gradient(ellipse 55% 70% at 88% 8%, rgba(255, 248, 228, 0.95), transparent 60%),
+    /* 斜射的光柱 */
+    linear-gradient(112deg, transparent 38%, rgba(255, 243, 214, 0.42) 52%, rgba(255, 236, 196, 0.18) 64%, transparent 72%),
+    linear-gradient(106deg, transparent 46%, rgba(255, 246, 222, 0.3) 58%, transparent 70%),
+    /* 地面 */
+    linear-gradient(to bottom, transparent 58%, rgba(176, 146, 108, 0.34) 72%, rgba(148, 119, 84, 0.46) 100%),
+    /* 左侧墙面的阴影 */
+    radial-gradient(ellipse 70% 90% at 4% 40%, rgba(120, 104, 84, 0.26), transparent 62%),
+    /* 底色 */
+    linear-gradient(168deg, #f0e6d2 0%, #e6d9c0 46%, #d9c9ae 100%);
+}
+
+/* 走廊：纵深强，尽头有一片亮光 */
+.scene-corridor {
+  background:
+    radial-gradient(ellipse 26% 42% at 50% 46%, rgba(255, 250, 234, 0.92), transparent 68%),
+    /* 两侧墙面向中心收拢 */
+    linear-gradient(to right, rgba(110, 96, 78, 0.4) 0%, transparent 26%, transparent 74%, rgba(110, 96, 78, 0.4) 100%),
+    /* 天花板 */
+    linear-gradient(to bottom, rgba(126, 112, 94, 0.36) 0%, transparent 22%),
+    /* 地面反光 */
+    linear-gradient(to bottom, transparent 62%, rgba(196, 176, 148, 0.4) 78%, rgba(160, 140, 114, 0.5) 100%),
+    linear-gradient(180deg, #e8dcc6 0%, #ddd0b8 55%, #cdbea4 100%);
+}
+
+/* 夜晚的房间：台灯是唯一光源，四周压得很暗 */
+.scene-night-desk {
+  background:
+    /* 台灯光圈 */
+    radial-gradient(ellipse 30% 34% at 34% 62%, rgba(255, 226, 168, 0.92), rgba(255, 214, 150, 0.34) 42%, transparent 72%),
+    /* 窗外夜色 */
+    radial-gradient(ellipse 34% 46% at 82% 26%, rgba(96, 118, 148, 0.5), transparent 66%),
+    /* 四角压暗 */
+    radial-gradient(ellipse 120% 110% at 50% 50%, transparent 32%, rgba(28, 32, 44, 0.62) 100%),
+    linear-gradient(170deg, #4a4a58 0%, #3c3c4a 50%, #2e2e3a 100%);
+}
+
+/* 家里的客厅：偏暖，光比较平 */
+.scene-home {
+  background:
+    radial-gradient(ellipse 46% 56% at 76% 22%, rgba(255, 246, 226, 0.82), transparent 62%),
+    linear-gradient(to bottom, rgba(150, 164, 178, 0.28) 0%, transparent 46%),
+    linear-gradient(to bottom, transparent 56%, rgba(184, 152, 116, 0.36) 74%, rgba(158, 128, 96, 0.48) 100%),
+    radial-gradient(ellipse 60% 80% at 8% 62%, rgba(128, 108, 88, 0.24), transparent 60%),
+    linear-gradient(172deg, #f2e8d6 0%, #e8dbc4 48%, #dbcbae 100%);
+}
+
+/* 楼梯间：监控照不到的角落，光从上方漏下来 */
+.scene-stairwell {
+  background:
+    radial-gradient(ellipse 40% 30% at 62% 4%, rgba(255, 248, 230, 0.7), transparent 64%),
+    linear-gradient(122deg, transparent 30%, rgba(255, 244, 218, 0.24) 44%, transparent 58%),
+    radial-gradient(ellipse 110% 100% at 40% 60%, transparent 26%, rgba(58, 54, 48, 0.5) 100%),
+    linear-gradient(165deg, #cbbca6 0%, #b6a68e 52%, #9c8c76 100%);
+}
+
+/* 礼堂：舞台亮，观众席暗 */
+.scene-hall {
+  background:
+    radial-gradient(ellipse 44% 40% at 50% 34%, rgba(255, 250, 236, 0.95), rgba(255, 240, 208, 0.4) 46%, transparent 74%),
+    radial-gradient(ellipse 120% 90% at 50% 96%, rgba(48, 44, 54, 0.56), transparent 60%),
+    linear-gradient(to bottom, rgba(72, 66, 76, 0.34) 0%, transparent 30%),
+    linear-gradient(176deg, #e4d8c2 0%, #cdbea6 58%, #a89880 100%);
+}
+
+/* 心里发紧的时刻：暖色退去，冷灰压上来，边缘收紧 */
+.scene-entangled {
+  background:
+    radial-gradient(ellipse 34% 30% at 50% 48%, rgba(226, 216, 202, 0.5), transparent 70%),
+    radial-gradient(ellipse 100% 92% at 50% 50%, transparent 18%, rgba(74, 76, 86, 0.5) 78%, rgba(52, 54, 64, 0.66) 100%),
+    linear-gradient(158deg, #b8b4ae 0%, #a8a6a4 48%, #918f92 100%);
+}
+
+/* 想清楚之后：视野打开，光变均匀，留白变多 */
+.scene-clarity {
+  background:
+    radial-gradient(ellipse 62% 68% at 50% 40%, rgba(255, 253, 246, 0.96), transparent 76%),
+    linear-gradient(to bottom, transparent 68%, rgba(178, 194, 202, 0.24) 100%),
+    linear-gradient(176deg, #f6f2e8 0%, #eef0ea 54%, #e4e8e6 100%);
+}
+
+/* 默认 */
+.scene-default {
+  background:
+    radial-gradient(ellipse 60% 60% at 50% 34%, rgba(255, 251, 240, 0.8), transparent 72%),
+    linear-gradient(172deg, #f0eade 0%, #e6dfd0 100%);
+}

@@ -1,0 +1,354 @@
+/* 标题界面 */
+#title-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+}
+
+.title-art {
+  width: 100%;
+  max-width: 520px;
+  height: 280px;
+  margin-bottom: 2.5rem;
+}
+
+.title-text {
+  text-align: center;
+  max-width: 540px;
+}
+
+.series-name {
+  font-size: 1.3rem;
+  letter-spacing: 0.6em;
+  color: var(--ink-soft);
+  margin: 0 0 0.5rem 0;
+}
+
+.book-name {
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 0 0 1.2rem 0;
+  letter-spacing: 0.08em;
+}
+
+.tagline {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin: 0 0 2.5rem 0;
+}
+
+.title-menu {
+  width: 100%;
+  max-width: 360px;
+}
+
+/* 场景界面 */
+#scene-screen {
+  display: flex;
+  flex-direction: column;
+}
+
+.scene-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+.chapter-label {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  font-family: var(--sans);
+}
+
+.scene-tools {
+  display: flex;
+  gap: 1rem;
+}
+
+.tool-button {
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--rule);
+  background: transparent;
+  color: var(--ink-soft);
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.tool-button:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+/* 缓慢的呼吸式漂移：让静止画面有一点活的感觉 */
+@keyframes scene-breathe {
+  0%   { transform: scale(1.02) translate(0, 0); }
+  50%  { transform: scale(1.05) translate(-1%, -0.8%); }
+  100% { transform: scale(1.02) translate(0, 0); }
+}
+
+@keyframes ink-settle {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes line-rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* 人物立绘：按高度缩放。
+   抠图后每张图的宽高比不同，若按宽度缩放，姿势宽的角色会被缩小、
+   显得头小一圈。统一高度才能保证所有人的头身比看起来一致。 */
+.cast-portrait {
+  display: block;
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 20px rgba(48, 44, 40, 0.22));
+}
+
+/* 场景背景：铺满舞台并缓慢呼吸 */
+.scene-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 900ms ease;
+  animation: scene-breathe 42s ease-in-out infinite;
+}
+
+.scene-photo.is-shown {
+  opacity: 1;
+}
+
+.title-art-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(48, 44, 40, 0.22);
+  animation: ink-settle 1.4s ease both;
+}
+
+/* 舞台：背景 + 人物层 + 标注 */
+.stage {
+  flex: 1;
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.stage-backdrop,
+.stage-cast {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stage-backdrop {
+  z-index: 1;
+  transition: opacity 800ms ease;
+}
+
+/* 背景极缓慢地呼吸，一个周期约 42 秒 */
+.stage-backdrop.scene-image::before {
+  animation: scene-breathe 42s ease-in-out infinite;
+}
+
+.stage-cast {
+  z-index: 2;
+  pointer-events: none;
+}
+
+.cast-slot {
+  position: absolute;
+  height: 88%;
+  bottom: 8%;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 800ms ease 240ms, transform 800ms ease 240ms;
+  display: flex;
+  align-items: flex-end;
+}
+
+.cast-slot.is-present {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cast-slot.is-speaking {
+  opacity: 1;
+}
+
+.cast-slot.is-dim {
+  opacity: 0.4;
+}
+
+.cast-slot.is-dim .cast-portrait {
+  filter: drop-shadow(0 8px 20px rgba(48, 44, 40, 0.22)) grayscale(0.3);
+}
+
+.cast-left { left: 8%; }
+.cast-center { left: 50%; transform: translateX(-50%) translateY(20px); }
+.cast-center.is-present { transform: translateX(-50%) translateY(0); }
+.cast-right { right: 8%; }
+
+/* 窄屏：立绘缩小并推到两侧边缘。
+   两人仍会轻微交叠，但非说话者已被压暗，看起来是前后景层次而不是错位。 */
+@media (max-width: 760px) {
+  .cast-slot {
+    height: 66%;
+    bottom: 3%;
+  }
+
+  .cast-left { left: -7%; }
+  .cast-right { right: -7%; }
+}
+
+.stage-caption {
+  position: absolute;
+  bottom: 1rem;
+  left: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--ink-faint);
+  font-family: var(--sans);
+  z-index: 3;
+}
+
+/* 对话框：视觉小说风格 */
+.dialogue {
+  padding: 1.8rem 2.5rem 2rem 2.5rem;
+  border-top: none;
+  background: linear-gradient(to bottom, rgba(250, 247, 238, 0.96), rgba(244, 239, 226, 0.98));
+  backdrop-filter: blur(12px);
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.12);
+  border-radius: 12px 12px 0 0;
+  position: relative;
+}
+
+.dialogue::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(to right, transparent, var(--accent-clay), transparent);
+  opacity: 0.4;
+}
+
+.speaker {
+  font-size: 1rem;
+  color: var(--accent-clay);
+  margin: 0 0 0.8rem 0;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.line {
+  font-size: 1.1rem;
+  line-height: 1.85;
+  margin: 0;
+  min-height: 3.6em;
+  color: var(--ink);
+}
+
+.advance-hint {
+  margin-top: 1.2rem;
+  padding: 0.6rem 1.4rem;
+  border: 2px solid var(--rule);
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--ink-soft);
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.advance-hint:hover {
+  border-color: var(--accent-clay);
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--ink);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.advance-hint.is-typing {
+  animation: typing-pulse 1.2s ease-in-out infinite;
+  border-color: var(--accent-clay);
+  color: var(--accent-clay);
+}
+
+@keyframes typing-pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* 选项菜单 */
+.choices {
+  padding: 1.5rem 2rem;
+  border-top: 1px solid var(--rule);
+  background: rgba(244, 239, 226, 0.92);
+}
+
+.choices-prompt {
+  font-size: 1rem;
+  line-height: 1.65;
+  margin: 0 0 1.2rem 0;
+  color: var(--ink-soft);
+}
+
+.choice-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.choice-list li {
+  margin: 0.8rem 0;
+}
+
+.choice-list button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 1rem 1.3rem;
+  border: 1.5px solid var(--ink-soft);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1rem;
+  line-height: 1.6;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  position: relative;
+}
+
+.choice-list button:hover {
+  border-color: var(--ink);
+  background: var(--paper-deep);
+  transform: translateX(4px);
+}
+
+.choice-list button::before {
+  content: '—';
+  position: absolute;
+  left: -1.5rem;
+  opacity: 0;
+  transition: opacity 0.22s ease;
+}
+
+.choice-list button:hover::before {
+  opacity: 1;
+}

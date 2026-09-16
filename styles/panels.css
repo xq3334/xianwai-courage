@@ -1,0 +1,290 @@
+/* 覆盖层：用于手册、笔记、观察、拖拽等面板 */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(38, 34, 29, 0.65);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.overlay:not([hidden]) {
+  opacity: 1;
+}
+
+.overlay-sheet {
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  box-shadow: 0 8px 24px var(--shadow);
+  max-width: 740px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 2.5rem;
+  position: relative;
+}
+
+.overlay-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--ink-soft);
+  background: transparent;
+  color: var(--ink-soft);
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.overlay-close:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.overlay-title {
+  font-size: 1.6rem;
+  margin: 0 0 1.8rem 0;
+  border-bottom: 1.5px solid var(--rule);
+  padding-bottom: 0.8rem;
+  letter-spacing: 0.06em;
+}
+
+.overlay-body {
+  font-size: 1rem;
+  line-height: 1.75;
+}
+/* hidden 属性必须能压过 display:flex，否则覆盖层关不掉 */
+.overlay[hidden] {
+  display: none;
+}
+
+.overlay-body p {
+  margin: 0 0 1rem 0;
+}
+
+.overlay-body ul {
+  margin: 0 0 1rem 0;
+  padding-left: 1.4rem;
+}
+
+.overlay-body li {
+  margin: 0.5rem 0;
+}
+
+.overlay-note {
+  font-size: 0.9rem;
+  color: var(--ink-faint);
+}
+
+.chapter-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.chapter-list .ink-button[disabled] {
+  border-color: var(--rule);
+  color: var(--ink-faint);
+  cursor: not-allowed;
+}
+
+/* 暂停观察 / 现实练习的表单 */
+.field {
+  margin: 1.6rem 0;
+}
+
+.field-label {
+  display: block;
+  margin-bottom: 0.7rem;
+  color: var(--ink);
+}
+
+.paper-input {
+  width: 100%;
+  min-height: 88px;
+  padding: 0.8rem;
+  border: 1px solid var(--rule);
+  background: rgba(255, 255, 255, 0.5);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1rem;
+  line-height: 1.7;
+  resize: vertical;
+}
+
+.paper-input:focus {
+  outline: none;
+  border-color: var(--accent-slate);
+}
+
+.option-row {
+  display: block;
+  margin: 0.5rem 0;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.option-row:hover {
+  border-color: var(--rule);
+  background: var(--paper-deep);
+}
+
+.option-row input {
+  margin-right: 0.6rem;
+}
+/* 知识卡片 */
+.knowledge-card {
+  margin: 1.6rem 0;
+  padding: 1.5rem;
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent-clay);
+  background: rgba(234, 226, 207, 0.5);
+}
+
+.knowledge-card h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.2rem;
+  color: var(--accent-clay);
+}
+
+.card-row {
+  margin: 0.8rem 0;
+}
+
+.card-row strong {
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+.card-row.is-action strong {
+  color: var(--accent-ochre);
+}
+
+.card-row p {
+  margin: 0.3rem 0 0 0;
+}
+
+/* 烦恼笔记 */
+.note-entry {
+  margin: 1.2rem 0;
+  padding: 1rem 1.2rem;
+  border-left: 3px solid var(--accent-slate);
+  background: rgba(234, 226, 207, 0.5);
+}
+
+.note-date {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+  font-family: var(--sans);
+}
+
+.note-text {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+/* 课题分离拖拽 */
+.zone-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.task-zone {
+  padding: 1rem;
+  min-height: 140px;
+  border: 2px dashed var(--rule);
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.task-zone.is-hovered {
+  background: var(--paper-deep);
+  border-color: var(--ink);
+}
+
+.zone-title {
+  display: block;
+  margin-bottom: 0.7rem;
+  font-size: 0.95rem;
+}
+
+.task-zone[data-zone="mine"] { border-color: var(--accent-slate); }
+.task-zone[data-zone="mine"] .zone-title { color: var(--accent-slate); }
+.task-zone[data-zone="influence"] { border-color: var(--accent-ochre); }
+.task-zone[data-zone="influence"] .zone-title { color: var(--accent-ochre); }
+
+.task-item {
+  padding: 0.7rem 0.9rem;
+  margin: 0.5rem 0;
+  border: 1px solid var(--ink-soft);
+  background: var(--paper);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  cursor: grab;
+}
+
+.task-item.is-selected {
+  border-color: var(--accent-clay);
+  background: var(--paper-deep);
+}
+
+.task-item.is-dragging {
+  opacity: 0.4;
+}
+
+/* 结局 */
+.ending-sheet {
+  text-align: center;
+}
+
+.ending-title {
+  border: none;
+  margin-bottom: 1.5rem;
+  font-size: 1.9rem;
+}
+
+.ending-body {
+  padding: 1.8rem 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  white-space: pre-wrap;
+  text-align: left;
+  line-height: 1.95;
+}
+
+.ending-quote {
+  margin: 1.8rem 0;
+  color: var(--ink-soft);
+  line-height: 1.8;
+}
+
+.ending-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.ending-actions .ink-button {
+  margin: 0;
+}
+
+/* 窄屏适配 */
+@media (max-width: 760px) {
+  .overlay { padding: 0; }
+  .overlay-sheet { padding: 2rem 1.2rem; max-height: 100vh; border: none; }
+  .zone-grid { grid-template-columns: 1fr; }
+  .ending-actions { flex-direction: column; }
+  .title-art { height: 180px; }
+  .book-name { font-size: 1.5rem; }
+  .dialogue, .choices { padding: 1.2rem; }
+}

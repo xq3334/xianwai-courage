@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>线外 · 第一部：被讨厌的勇气</title>
+<meta name="description" content="一款受阿德勒心理学启发的原创叙事选择游戏。一名高二学生面对学业、人际关系与未来的迷茫。">
+<link rel="stylesheet" href="styles/paper.css">
+<link rel="stylesheet" href="styles/scene.css">
+<link rel="stylesheet" href="styles/scenery.css">
+<link rel="stylesheet" href="styles/panels.css">
+</head>
+<body>
+<div id="paper-grain" aria-hidden="true"></div>
+
+<main id="app">
+  <!-- 标题界面 -->
+  <section id="title-screen" class="screen is-active">
+    <div class="title-art" id="title-art" aria-hidden="true"></div>
+    <div class="title-text">
+      <p class="series-name">线　外</p>
+      <h1 class="book-name">第一部 · 被讨厌的勇气</h1>
+      <p class="tagline">一个总想成为「别人眼里正确的人」的高中生，<br>学习如何不再把人生交给别人的评价。</p>
+      <nav class="title-menu">
+        <button class="ink-button" data-action="continue" id="continue-button" hidden>继续上次</button>
+        <button class="ink-button" data-action="new-game">开始新的一学期</button>
+        <button class="ink-button" data-action="chapters">章节选择</button>
+        <button class="ink-button" data-action="handbook">线外手册</button>
+        <button class="ink-button" data-action="notebook">烦恼笔记</button>
+        <button class="ink-button" data-action="about">关于这部作品</button>
+      </nav>
+    </div>
+  </section>
+
+  <!-- 剧情界面 -->
+  <section id="scene-screen" class="screen">
+    <header class="scene-bar">
+      <span class="chapter-label" id="chapter-label"></span>
+      <div class="scene-tools">
+        <button class="tool-button" data-action="handbook" title="线外手册">手册</button>
+        <button class="tool-button" data-action="notebook" title="烦恼笔记">笔记</button>
+        <button class="tool-button" data-action="save-quit" title="保存并回到标题">保存</button>
+      </div>
+    </header>
+
+    <div class="stage">
+      <div class="stage-backdrop" id="stage-backdrop"></div>
+      <div class="stage-cast" id="stage-cast"></div>
+      <div class="stage-caption" id="stage-caption"></div>
+    </div>
+
+    <div class="dialogue" id="dialogue" role="region" aria-live="polite">
+      <p class="speaker" id="speaker"></p>
+      <p class="line" id="line"></p>
+      <button class="advance-hint" id="advance-button" type="button">继续</button>
+    </div>
+
+    <div class="choices" id="choices" hidden>
+      <p class="choices-prompt" id="choices-prompt"></p>
+      <ul class="choice-list" id="choice-list"></ul>
+    </div>
+  </section>
+
+  <!-- 覆盖面板：暂停观察 / 课题分离 / 现实练习 / 手册 / 笔记 / 结局 / 章节 -->
+  <div id="overlay" class="overlay" hidden>
+    <div class="overlay-sheet" id="overlay-sheet" role="dialog" aria-modal="true"></div>
+  </div>
+</main>
+
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
