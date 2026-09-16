@@ -125,9 +125,10 @@ this.traits = {
 
 #### 选择节点渲染
 
-**重要**：选择节点有两种格式，引擎只支持第一种！
+选择节点在历史上出现过两种字段命名，引擎现在两种都支持（见「已知问题」里的兼容层）。
+**新写的内容请统一用下面这一种**：
 
-**✅ 正确格式（章节0-3使用）**：
+**推荐格式（章节0-3使用）**：
 ```javascript
 {
   type: 'choice',
@@ -141,14 +142,14 @@ this.traits = {
 }
 ```
 
-**❌ 错误格式（章节4-8使用，需要修复）**：
+**遗留格式（章节4-8使用，引擎会自动转换，不要在新内容里沿用）**：
 ```javascript
 {
   type: 'choice',
-  options: [  // 应该是 choices
+  options: [  // 等价于 choices
     { 
-      label: '选项文本',  // 应该是 text
-      traits: { autonomy: 5 },  // 应该是 effects
+      label: '选项文本',  // 等价于 text
+      traits: { autonomy: 5 },  // 会被转换成 effects
       next: 'nodeId' 
     }
   ]
@@ -654,14 +655,25 @@ OK  always-pick-#4: 章节 10/10，选择 26 次
 
 ## 部署说明
 
-**GitHub Pages 构建的是 `master` 分支**，不是 `main`。
-推送修复后必须同步 `master`，否则线上跑的还是旧代码：
+本仓库只有 `master` 一个分支，GitHub Pages 直接从 `master` 根目录构建。
+推送即部署，不需要额外的分支同步：
 
 ```bash
-git push origin main
-git checkout master && git merge main && git push origin master
-git checkout main
+npm test                  # 先跑校验，别把卡死的剧本推上去
+git push origin master
 ```
+
+线上地址：https://xq3334.github.io/xianwai-courage/
+
+部署完成后建议核对一次实际加载的文件，确认线上跑的是新代码：
+
+```bash
+curl -I https://xq3334.github.io/xianwai-courage/src/engine.js
+```
+
+**单分支是刻意的选择。** 上一个仓库同时存在 `main` / `master` / `gh-pages` 三个分支，
+修复推到了 `main`，而 Pages 构建的是 `master`，结果线上跑了很久的旧代码却毫无察觉。
+只保留一个分支可以从根上避免这类问题。
 
 ---
 
@@ -843,15 +855,15 @@ for (const [chId, chData] of Object.entries(chapters)) {
 
 部署到GitHub Pages前：
 
-- [ ] 修复选择节点格式Bug
-- [ ] 测试完整流程（从序章到结局）
-- [ ] 检查所有图片资源路径
-- [ ] 压缩图片资源
+- [x] 修复选择节点格式Bug
+- [x] 测试完整流程（从序章到结局）—— `npm run simulate`
+- [x] 检查所有图片资源路径 —— 36 个 WebP 全部存在
+- [x] 压缩图片资源 —— 已转为 WebP，总计 3.8 MB
+- [x] 更新README中的在线体验链接
 - [ ] 添加loading界面
 - [ ] 测试存档/读档功能
 - [ ] 检查移动端兼容性
 - [ ] 添加错误边界处理
-- [ ] 更新README中的在线体验链接
 
 ---
 

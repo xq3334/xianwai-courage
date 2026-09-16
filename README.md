@@ -71,7 +71,7 @@ open index.html
 ### 项目结构
 
 ```
-xianwai-book1/
+xianwai-courage/
 ├── index.html              # 入口文件
 ├── src/
 │   ├── engine.js           # 游戏引擎核心
