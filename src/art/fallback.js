@@ -32,8 +32,10 @@ const SCENE_FALLBACK = {
   'classroom-day': 'classroom-day',
   'classroom-sunset': 'classroom-sunset',
   'classroom-tense': 'classroom-day',
-  'classroom-afternoon': 'classroom-day',
-  'classroom-morning': 'classroom-day',
+  'classroom-afternoon': 'classroom-afternoon',
+  'classroom-morning': 'classroom-morning',
+  'classroom-dusk': 'classroom-dusk',
+  'classroom-empty': 'classroom-empty',
   'classroom-back': 'classroom-day',
   'classroom-presentation': 'classroom-day',
   bedroom: 'bedroom-night',
@@ -50,9 +52,10 @@ const SCENE_FALLBACK = {
   clarity: 'clarity',
   entangled: 'entangled',
   'counseling-room': 'office',
-  rooftop: 'school-gate',
-  'rooftop-day': 'school-gate',
-  'rooftop-sunset': 'school-gate',
+  rooftop: 'rooftop-day',
+  'rooftop-day': 'rooftop-day',
+  'rooftop-sunset': 'rooftop-sunset',
+  playground: 'playground',
   'street-winter': 'school-gate'
 };
 
