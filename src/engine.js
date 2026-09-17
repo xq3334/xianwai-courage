@@ -12,6 +12,7 @@ import { renderTaskSeparation } from './ui/taskSeparation.js';
 import { renderPractice } from './ui/practice.js';
 import { renderEnding } from './ui/ending.js';
 import { renderTitleArt, renderStageArt, preloadArtwork } from './art/stage.js';
+import { inferEmotion } from './art/emotion.js';
 
 // 说话人 → 人物立绘。主角始终在场，说话的人站到他对面。
 const SPEAKER_FIGURES = {
@@ -20,6 +21,8 @@ const SPEAKER_FIGURES = {
   '许禾': 'xuhe',
   '沈老师': 'shen',
   '妈妈': 'mother',
+  '班主任': 'shen',
+  '老师': 'shen',
 };
 
 export const engine = {
@@ -145,13 +148,20 @@ export const engine = {
     if (node.cast) return node.cast;
 
     const otherFigure = SPEAKER_FIGURES[node.speaker];
+
+    // 无对应立绘的说话人（旁白、同学、班长）只显示主角
     if (!otherFigure) {
-      return [{ id: 'protagonist', position: 'center' }];
+      return [{
+        id: 'protagonist',
+        position: 'center',
+        emotion: inferEmotion('protagonist', node.text),
+      }];
     }
 
+    // 说话人的表情按当前台词推断，主角保持基础神态
     return [
-      { id: 'protagonist', position: 'left', dim: true },
-      { id: otherFigure, position: 'right' },
+      { id: 'protagonist', position: 'left' },
+      { id: otherFigure, position: 'right', emotion: inferEmotion(otherFigure, node.text) },
     ];
   },
 

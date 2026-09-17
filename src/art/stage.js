@@ -17,11 +17,11 @@ const SCENE_ALIASES = {
 
 // 说话人 → 立绘文件前缀
 export const SPEAKER_PORTRAITS = {
-  '林澈': 'linche-grin',
-  '顾言': 'guyan-sharp',
-  '许禾': 'xuhe-sorry',
-  '沈老师': 'protagonist',
-  '妈妈': 'protagonist',
+  '林澈': 'linche',
+  '顾言': 'guyan',
+  '许禾': 'xuhe',
+  '沈老师': 'shen',
+  '妈妈': 'mother',
 };
 
 // 基准资源：用户指定的6个WebP文件
