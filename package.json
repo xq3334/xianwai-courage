@@ -7,8 +7,9 @@
   "scripts": {
     "serve": "node serve.mjs 8090",
     "check-links": "node check-module-links.mjs",
+    "check-types": "node check-node-types.mjs",
     "validate": "node validate-chapters.mjs",
     "simulate": "node simulate-playthrough.mjs",
-    "test": "node check-module-links.mjs && node validate-chapters.mjs && node simulate-playthrough.mjs"
+    "test": "node check-module-links.mjs && node check-node-types.mjs && node validate-chapters.mjs && node simulate-playthrough.mjs"
   }
 }

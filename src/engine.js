@@ -207,6 +207,14 @@ export const engine = {
       return;
     }
 
+    // 章节结束节点。去向一律由 chapterList 的顺序决定，不读节点自己的
+    // nextChapter —— 剧本里那个字段并不可靠（ch2/ch3 都写着 'finale'，
+    // 照它跳会直接跳过六章）。最后一章走完则进入结局判定。
+    if (node.type === 'end') {
+      this.finishChapter();
+      return;
+    }
+
     console.error(`未知的节点类型：${node.type}`);
   },
 
