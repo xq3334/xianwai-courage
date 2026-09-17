@@ -8,7 +8,7 @@ export const finale = {
   nodes: {
     opening: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'classroom-dusk',
       speaker: '',
       text: '一月。期末考试周结束了。',
       next: 's2'
@@ -16,7 +16,7 @@ export const finale = {
 
     s2: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'classroom-dusk',
       speaker: '',
       text: '这一学期发生了太多事。你和林澈、顾言、许禾的关系都经历了巨大变化。',
       next: 's3'
@@ -24,7 +24,7 @@ export const finale = {
 
     s3: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'classroom-dusk',
       speaker: '',
       text: '班主任通知：「下学期班委要重新选举。」',
       next: 's4'
@@ -32,7 +32,7 @@ export const finale = {
 
     s4: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'classroom-dusk',
       speaker: '',
       text: '你看着窗外，想起开学第一天被点名当心理委员的那个下午。',
       next: 'inner1'
@@ -40,7 +40,7 @@ export const finale = {
 
     inner1: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'classroom-dusk',
       speaker: '',
       text: '（那时的我，只想安安静静读完高中。现在的我……）',
       next: 'decision'
@@ -48,7 +48,7 @@ export const finale = {
 
     decision: {
       type: 'choice',
-      art: 'classroom',
+      art: 'classroom-dusk',
       prompt: '关于下学期是否继续当心理委员，你的决定是……',
       choices: [
         { text: '申请退出，我需要休息', next: 'quit', effects: [{ trait: 'autonomy', delta: 5 }] },
@@ -59,7 +59,7 @@ export const finale = {
 
     quit: {
       type: 'dialogue',
-      art: 'bedroom',
+      art: 'classroom-dusk',
       speaker: '',
       text: '晚上，你在家里和妈妈说了这个决定。',
       next: 'mom_reaction'
@@ -67,7 +67,7 @@ export const finale = {
 
     mom_reaction: {
       type: 'dialogue',
-      art: 'bedroom',
+      art: 'classroom-dusk',
       speaker: '妈妈',
       text: '「你说什么？你要退出？」',
       next: 'explain'
@@ -75,7 +75,7 @@ export const finale = {
 
     explain: {
       type: 'dialogue',
-      art: 'bedroom',
+      art: 'classroom-dusk',
       speaker: '',
       text: '「我想做回普通学生。这不是我想要的。」',
       next: 'mom_response'
@@ -83,7 +83,7 @@ export const finale = {
 
     mom_response: {
       type: 'dialogue',
-      art: 'bedroom',
+      art: 'classroom-dusk',
       speaker: '妈妈',
       text: '「那你想要什么？」',
       next: 'answer'
@@ -91,7 +91,7 @@ export const finale = {
 
     answer: {
       type: 'dialogue',
-      art: 'bedroom',
+      art: 'classroom-dusk',
       speaker: '',
       text: '「我想要一个普通的高中生活。不用被别人需要，也不用证明自己有价值。我就是我。这就够了。」',
       next: 'mom_silent'
@@ -99,7 +99,7 @@ export const finale = {
 
     mom_silent: {
       type: 'dialogue',
-      art: 'bedroom',
+      art: 'classroom-dusk',
       speaker: '妈妈',
       text: '「……你长大了。那就按你的想法做吧。」',
       next: 'inner2'
@@ -107,7 +107,7 @@ export const finale = {
 
     inner2: {
       type: 'dialogue',
-      art: 'bedroom',
+      art: 'classroom-dusk',
       speaker: '',
       text: '（原来，真正的自立，是敢于让别人失望。）',
       next: 'ending_quit'
@@ -120,7 +120,7 @@ export const finale = {
 
     continue: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'classroom-dusk',
       speaker: '',
       text: '你找到沈老师，说出了自己的想法。',
       next: 'shen1'
@@ -128,7 +128,7 @@ export const finale = {
 
     shen1: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'classroom-dusk',
       speaker: '沈老师',
       text: '「你想继续当心理委员，但要做出改变？」',
       next: 'shen2'
@@ -136,7 +136,7 @@ export const finale = {
 
     shen2: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'classroom-dusk',
       speaker: '',
       text: '「是的。我学会了设置边界，但我也想帮助别人。不是替他们解决问题，而是陪他们一起面对。」',
       next: 'shen3'
@@ -144,7 +144,7 @@ export const finale = {
 
     shen3: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'classroom-dusk',
       speaker: '沈老师',
       text: '「你已经找到了答案。这就是共同体感觉——在保持自我的同时，与他人建立真实的连接。」',
       next: 'inner3'
@@ -152,7 +152,7 @@ export const finale = {
 
     inner3: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'classroom-dusk',
       speaker: '',
       text: '（这不是结束。这是开始。）',
       next: 'ending_continue'
@@ -165,7 +165,7 @@ export const finale = {
 
     maintain: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'classroom-dusk',
       speaker: '',
       text: '你决定继续当心理委员，就像之前一样。',
       next: 'inner4'
@@ -173,7 +173,7 @@ export const finale = {
 
     inner4: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'classroom-dusk',
       speaker: '',
       text: '（但内心深处，你知道自己并没有真正改变。）',
       next: 'ending_maintain'

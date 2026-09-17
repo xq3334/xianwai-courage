@@ -32,9 +32,23 @@ const BASELINE_CHARACTERS = [
   'xuhe-sorry'
 ];
 
+// 剧本实际用到的场景，按出场次数排序。切背景前没缓存会闪白，所以全部预热。
 const BASELINE_SCENES = [
   'classroom-day',
-  'bedroom-night'
+  'classroom-afternoon',
+  'bedroom-night',
+  'rooftop-sunset',
+  'rooftop-day',
+  'office',
+  'classroom-dusk',
+  'hall',
+  'school-gate',
+  'classroom-morning',
+  'stairwell',
+  'home-dining',
+  'library',
+  'corridor',
+  'classroom-empty'
 ];
 
 export function resolveSceneFile(sceneId) {

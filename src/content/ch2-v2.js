@@ -188,7 +188,7 @@ export const chapter2 = {
 
     week_later: { 
       type: 'dialogue', 
-      art: 'night-desk', 
+      art: 'bedroom-night', 
       speaker: '', 
       text: '一周后，小组群里又炸了。', 
       next: 'group_fight' 
@@ -196,7 +196,7 @@ export const chapter2 = {
 
     group_fight: { 
       type: 'dialogue', 
-      art: 'night-desk', 
+      art: 'bedroom-night', 
       speaker: '林澈', 
       text: '【群消息】明天讨论第二阶段，都来吧。', 
       next: 'gy_refuse' 
@@ -204,7 +204,7 @@ export const chapter2 = {
 
     gy_refuse: { 
       type: 'dialogue', 
-      art: 'night-desk', 
+      art: 'bedroom-night', 
       speaker: '顾言', 
       text: '【群消息】我自己写完了，不用讨论。', 
       next: 'lc_angry' 
@@ -212,7 +212,7 @@ export const chapter2 = {
 
     lc_angry: { 
       type: 'dialogue', 
-      art: 'night-desk', 
+      art: 'bedroom-night', 
       speaker: '林澈', 
       text: '【群消息】？这是小组作业，你一个人写算什么？', 
       next: 'gy_sarcasm' 
@@ -220,7 +220,7 @@ export const chapter2 = {
 
     gy_sarcasm: { 
       type: 'dialogue', 
-      art: 'night-desk', 
+      art: 'bedroom-night', 
       speaker: '顾言', 
       text: '【群消息】反正你也都安排好了，我就省得浪费时间。', 
       next: 'fight_escalate' 
@@ -228,7 +228,7 @@ export const chapter2 = {
 
     fight_escalate: { 
       type: 'dialogue', 
-      art: 'night-desk', 
+      art: 'bedroom-night', 
       speaker: '', 
       text: '两人开始在群里吵起来。许禾没说话。你夹在中间，不知道该说什么。', 
       next: 'final_choice' 
@@ -236,7 +236,7 @@ export const chapter2 = {
 
     final_choice: { 
       type: 'choice', 
-      art: 'night-desk', 
+      art: 'bedroom-night', 
       prompt: '你……', 
       choices: [
         { 
@@ -273,7 +273,7 @@ export const chapter2 = {
 
     mediate: { 
       type: 'dialogue', 
-      art: 'night-desk', 
+      art: 'bedroom-night', 
       speaker: '', 
       text: '群里安静了一会儿，但你知道，问题没有解决。', 
       next: 'end' 
@@ -281,7 +281,7 @@ export const chapter2 = {
 
     side_lc: { 
       type: 'dialogue', 
-      art: 'night-desk', 
+      art: 'bedroom-night', 
       speaker: '顾言', 
       text: '【群消息】行，你们继续吧。', 
       next: 'gy_exit' 
@@ -289,7 +289,7 @@ export const chapter2 = {
 
     gy_exit: { 
       type: 'dialogue', 
-      art: 'night-desk', 
+      art: 'bedroom-night', 
       speaker: '', 
       text: '顾言退出了群聊。', 
       next: 'end' 
@@ -297,7 +297,7 @@ export const chapter2 = {
 
     side_gy: { 
       type: 'dialogue', 
-      art: 'night-desk', 
+      art: 'bedroom-night', 
       speaker: '林澈', 
       text: '【群消息】……随便你们。', 
       next: 'lc_hurt_end' 
@@ -305,7 +305,7 @@ export const chapter2 = {
 
     lc_hurt_end: { 
       type: 'dialogue', 
-      art: 'night-desk', 
+      art: 'bedroom-night', 
       speaker: '', 
       text: '林澈没再说话。', 
       next: 'end' 
@@ -313,7 +313,7 @@ export const chapter2 = {
 
     escape: { 
       type: 'dialogue', 
-      art: 'night-desk', 
+      art: 'bedroom-night', 
       speaker: '', 
       text: '你关掉手机，躺在床上。手机不停震动，但你不想看。', 
       next: 'end' 

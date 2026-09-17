@@ -6,7 +6,7 @@ export const prologue = {
   nodes: {
     start: { 
       type: 'dialogue', 
-      art: 'classroom', 
+      art: 'classroom-morning', 
       speaker: '', 
       text: '高一开学第一天。教室里弥漫着新生的陌生感，零零散散的交谈声在空气里浮动。', 
       next: 'p2' 
@@ -14,7 +14,7 @@ export const prologue = {
 
     p2: { 
       type: 'dialogue', 
-      art: 'classroom', 
+      art: 'classroom-morning', 
       speaker: '班主任', 
       text: '「好了，安静一下。现在宣布班委名单。班长是李明，学习委员是王静……」', 
       next: 'p3' 
@@ -22,7 +22,7 @@ export const prologue = {
 
     p3: { 
       type: 'dialogue', 
-      art: 'classroom', 
+      art: 'classroom-morning', 
       speaker: '班主任', 
       text: '「心理委员……我看看……就你吧。」', 
       next: 'p4' 
@@ -30,7 +30,7 @@ export const prologue = {
 
     p4: { 
       type: 'dialogue', 
-      art: 'classroom', 
+      art: 'classroom-morning', 
       speaker: '', 
       text: '全班的目光突然集中过来。有人窃笑，有人投来同情的眼神。', 
       next: 'p5' 
@@ -38,7 +38,7 @@ export const prologue = {
 
     p5: { 
       type: 'dialogue', 
-      art: 'classroom', 
+      art: 'classroom-morning', 
       speaker: '林澈', 
       text: '「哎呀挺好的，这个轻松。」', 
       next: 'choice1' 
@@ -46,7 +46,7 @@ export const prologue = {
 
     choice1: { 
       type: 'choice', 
-      art: 'classroom', 
+      art: 'classroom-morning', 
       prompt: '你的反应是……', 
       choices: [
         { 
@@ -75,7 +75,7 @@ export const prologue = {
 
     refuse: { 
       type: 'dialogue', 
-      art: 'classroom', 
+      art: 'classroom-morning', 
       speaker: '班主任', 
       text: '「就这么定了，名单已经报上去了。」', 
       next: 'bell' 
@@ -83,7 +83,7 @@ export const prologue = {
 
     accept: { 
       type: 'dialogue', 
-      art: 'classroom', 
+      art: 'classroom-morning', 
       speaker: '班主任', 
       text: '「很好。就这么定了。」', 
       next: 'bell' 
@@ -91,7 +91,7 @@ export const prologue = {
 
     silent: { 
       type: 'dialogue', 
-      art: 'classroom', 
+      art: 'classroom-morning', 
       speaker: '班主任', 
       text: '「那就这样。名单已经报上去了。」', 
       next: 'bell' 
@@ -99,7 +99,7 @@ export const prologue = {
 
     bell: { 
       type: 'dialogue', 
-      art: 'classroom', 
+      art: 'classroom-morning', 
       speaker: '', 
       text: '下课铃响。还没等你缓过神，林澈已经拉着你往外走。', 
       next: 'linche_pull' 
@@ -229,7 +229,7 @@ export const prologue = {
     // 场景3：语文课分组
     class: { 
       type: 'dialogue', 
-      art: 'classroom', 
+      art: 'classroom-afternoon', 
       speaker: '', 
       text: '下午，语文课。老师宣布四人小组作业——研究性学习，贯穿整学期。', 
       next: 'teacher' 
@@ -237,7 +237,7 @@ export const prologue = {
 
     teacher: { 
       type: 'dialogue', 
-      art: 'classroom', 
+      art: 'classroom-afternoon', 
       speaker: '老师', 
       text: '「四人一组，自由组合。」', 
       next: 'wave' 
@@ -245,7 +245,7 @@ export const prologue = {
 
     wave: { 
       type: 'dialogue', 
-      art: 'classroom', 
+      art: 'classroom-afternoon', 
       speaker: '林澈', 
       text: '「还缺俩人，谁来——」', 
       next: 'guyan' 
@@ -253,7 +253,7 @@ export const prologue = {
 
     guyan: { 
       type: 'dialogue', 
-      art: 'classroom', 
+      art: 'classroom-afternoon', 
       speaker: '顾言', 
       text: '「我一个人。」', 
       next: 'guyan_sit' 
@@ -261,7 +261,7 @@ export const prologue = {
 
     guyan_sit: { 
       type: 'dialogue', 
-      art: 'classroom', 
+      art: 'classroom-afternoon', 
       speaker: '', 
       text: '一个戴眼镜的男生面无表情地坐过来，全程没看你们，只是翻着自己的书。', 
       next: 'linche_stun' 
@@ -269,7 +269,7 @@ export const prologue = {
 
     linche_stun: { 
       type: 'dialogue', 
-      art: 'classroom', 
+      art: 'classroom-afternoon', 
       speaker: '林澈', 
       text: '「呃……那还缺一个——」', 
       next: 'xuhe' 
@@ -277,7 +277,7 @@ export const prologue = {
 
     xuhe: { 
       type: 'dialogue', 
-      art: 'classroom', 
+      art: 'classroom-afternoon', 
       speaker: '许禾', 
       text: '「我……我可以吗？」', 
       next: 'done' 
@@ -285,7 +285,7 @@ export const prologue = {
 
     done: { 
       type: 'dialogue', 
-      art: 'classroom', 
+      art: 'classroom-afternoon', 
       speaker: '林澈', 
       text: '「行啊，那就咱们四个！」', 
       next: 'weird' 
@@ -293,7 +293,7 @@ export const prologue = {
 
     weird: { 
       type: 'dialogue', 
-      art: 'classroom', 
+      art: 'classroom-afternoon', 
       speaker: '', 
       text: '顾言全程没看你们，翻着自己的书。许禾眼神闪躲，像怕被拒绝。你感觉这个组合……很微妙。', 
       next: 'choice3' 
@@ -301,7 +301,7 @@ export const prologue = {
 
     choice3: { 
       type: 'choice', 
-      art: 'classroom', 
+      art: 'classroom-afternoon', 
       prompt: '你……', 
       choices: [
         { 
@@ -330,7 +330,7 @@ export const prologue = {
 
     active: { 
       type: 'dialogue', 
-      art: 'classroom', 
+      art: 'classroom-afternoon', 
       speaker: '顾言', 
       text: '「先别急着社交，看看题目要求再说。」', 
       next: 'awkward' 
@@ -338,7 +338,7 @@ export const prologue = {
 
     observe: { 
       type: 'dialogue', 
-      art: 'classroom', 
+      art: 'classroom-afternoon', 
       speaker: '顾言', 
       text: '「先别急着社交，看看题目要求再说。」', 
       next: 'awkward' 
@@ -346,7 +346,7 @@ export const prologue = {
 
     doubt: { 
       type: 'dialogue', 
-      art: 'classroom', 
+      art: 'classroom-afternoon', 
       speaker: '顾言', 
       text: '「我听到了。先别急着社交，看看题目要求再说。」', 
       next: 'awkward' 
@@ -354,7 +354,7 @@ export const prologue = {
 
     awkward: { 
       type: 'dialogue', 
-      art: 'classroom', 
+      art: 'classroom-afternoon', 
       speaker: '', 
       text: '气氛有点尴尬。下课铃响，四人加了微信后散了。', 
       next: 'night' 
@@ -363,7 +363,7 @@ export const prologue = {
     // 场景4：晚上
     night: { 
       type: 'dialogue', 
-      art: 'night-desk', 
+      art: 'bedroom-night', 
       speaker: '', 
       text: '晚上，躺在床上刷手机，看到班级群消息。', 
       next: 'notice' 
@@ -371,7 +371,7 @@ export const prologue = {
 
     notice: { 
       type: 'dialogue', 
-      art: 'night-desk', 
+      art: 'bedroom-night', 
       speaker: '班长', 
       text: '【班级群】各班委明天中午开会。', 
       next: 'realize' 
@@ -379,7 +379,7 @@ export const prologue = {
 
     realize: { 
       type: 'dialogue', 
-      art: 'night-desk', 
+      art: 'bedroom-night', 
       speaker: '', 
       text: '你突然意识到：自己真的成了心理委员。想起白天林澈的"安排"，顾言的冷漠，许禾的小心翼翼……', 
       next: 'inner2' 
@@ -387,7 +387,7 @@ export const prologue = {
 
     inner2: { 
       type: 'dialogue', 
-      art: 'night-desk', 
+      art: 'bedroom-night', 
       speaker: '', 
       text: '我只是想安安静静读完高中。为什么突然要管别人的心理？管小组作业？管那些复杂的人？', 
       next: 'choice4' 
@@ -395,7 +395,7 @@ export const prologue = {
 
     choice4: { 
       type: 'choice', 
-      art: 'night-desk', 
+      art: 'bedroom-night', 
       prompt: '你的想法是……', 
       choices: [
         { 
@@ -427,7 +427,7 @@ export const prologue = {
 
     msg: { 
       type: 'dialogue', 
-      art: 'night-desk', 
+      art: 'bedroom-night', 
       speaker: '', 
       text: '手机震动。林澈发来消息。', 
       next: 'msg2' 
@@ -435,7 +435,7 @@ export const prologue = {
 
     msg2: { 
       type: 'dialogue', 
-      art: 'night-desk', 
+      art: 'bedroom-night', 
       speaker: '林澈', 
       text: '【消息】明天小组讨论，我整理了个初步方案，你看看？', 
       next: 'doc' 
@@ -443,7 +443,7 @@ export const prologue = {
 
     doc: { 
       type: 'dialogue', 
-      art: 'night-desk', 
+      art: 'bedroom-night', 
       speaker: '', 
       text: '你还没回复，他又发来一个3000字的文档。你盯着屏幕，不知道该说什么。', 
       next: 'end' 

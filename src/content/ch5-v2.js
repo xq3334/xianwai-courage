@@ -8,7 +8,7 @@ export const ch5 = {
   nodes: {
     opening: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'office',
       speaker: '',
       text: '心理咨询室。阳光透过窗帘洒进来，沈老师递给你一杯热茶。',
       next: 'teacher_question'
@@ -16,7 +16,7 @@ export const ch5 = {
 
     teacher_question: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'office',
       speaker: '沈老师',
       text: '「你知道心理委员的职责是什么吗？」',
       next: 'choice_answer_duty'
@@ -24,7 +24,7 @@ export const ch5 = {
 
     choice_answer_duty: {
       type: 'choice',
-      art: 'classroom',
+      art: 'office',
       prompt: '你回答：',
       choices: [
         { text: '"……帮助同学解决心理问题？"', next: 'wrong_understanding', effects: [{ trait: 'acceptance', delta: 1 }] },
@@ -35,7 +35,7 @@ export const ch5 = {
 
     wrong_understanding: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'office',
       speaker: '沈老师',
       text: '笑了：「不是。是"观察"和"上报"。」',
       next: 'explain_duty'
@@ -43,7 +43,7 @@ export const ch5 = {
 
     ask_guidance: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'office',
       speaker: '沈老师',
       text: '「那让我告诉你——心理委员的职责是"观察"和"上报"。」',
       next: 'explain_duty'
@@ -51,7 +51,7 @@ export const ch5 = {
 
     listen_silently: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'office',
       speaker: '沈老师',
       text: '欣赏地看着你：「心理委员的职责是"观察"和"上报"。」',
       next: 'explain_duty'
@@ -59,7 +59,7 @@ export const ch5 = {
 
     explain_duty: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'office',
       speaker: '沈老师',
       text: '「你不是心理医生，不需要解决所有人的问题。」',
       next: 'explain_duty_2'
@@ -67,7 +67,7 @@ export const ch5 = {
 
     explain_duty_2: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'office',
       speaker: '沈老师',
       text: '「更重要的是，你要先照顾好自己。」',
       next: 'teacher_asks_question'
@@ -75,7 +75,7 @@ export const ch5 = {
 
     teacher_asks_question: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'office',
       speaker: '沈老师',
       text: '「我问你一个问题。」',
       next: 'philosophical_question'
@@ -83,7 +83,7 @@ export const ch5 = {
 
     philosophical_question: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'office',
       speaker: '沈老师',
       text: '「如果许禾一直哭，林澈一直控制，顾言一直攻击——这是谁的课题？」',
       next: 'you_stunned'
@@ -91,7 +91,7 @@ export const ch5 = {
 
     you_stunned: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'office',
       speaker: '',
       text: '你愣住了。',
       next: 'teacher_answers'
@@ -99,7 +99,7 @@ export const ch5 = {
 
     teacher_answers: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'office',
       speaker: '沈老师',
       text: '「是他们的。不是你的。」',
       next: 'task_separation_explain'
@@ -107,7 +107,7 @@ export const ch5 = {
 
     task_separation_explain: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'office',
       speaker: '沈老师',
       text: '「你可以观察，可以倾听，甚至可以建议。但你不能替他们活。」',
       next: 'task_separation_name'
@@ -115,7 +115,7 @@ export const ch5 = {
 
     task_separation_name: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'office',
       speaker: '沈老师',
       text: '「因为那是"课题分离"。」',
       next: 'unlock_card'
@@ -123,7 +123,7 @@ export const ch5 = {
 
     unlock_card: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'office',
       speaker: '',
       text: '【解锁知识卡片：课题分离】',
       next: 'choice_understanding'
@@ -131,7 +131,7 @@ export const ch5 = {
 
     choice_understanding: {
       type: 'choice',
-      art: 'classroom',
+      art: 'office',
       prompt: '你的反应：',
       choices: [
         { text: '"我明白了。"', next: 'surface_understanding', effects: [{ trait: 'acceptance', delta: 1 }] },
@@ -142,7 +142,7 @@ export const ch5 = {
 
     surface_understanding: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'office',
       speaker: '',
       text: '"我明白了。"',
       next: 'teacher_sees_through'
@@ -150,7 +150,7 @@ export const ch5 = {
 
     teacher_sees_through: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'office',
       speaker: '沈老师',
       text: '看着你，没说话。她知道你还没真正理解。',
       next: 'days_pass'
@@ -158,7 +158,7 @@ export const ch5 = {
 
     worried: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'office',
       speaker: '',
       text: '"但如果我不帮，他们会怎么样？"',
       next: 'teacher_points_out'
@@ -166,7 +166,7 @@ export const ch5 = {
 
     teacher_points_out: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'office',
       speaker: '沈老师',
       text: '「这个担心本身，就是在承担他们的课题。」',
       next: 'deeper_explanation'
@@ -174,7 +174,7 @@ export const ch5 = {
 
     deeper_explanation: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'office',
       speaker: '沈老师',
       text: '「他们会面对自己的问题，学会成长。或者不学会，继续挣扎。」',
       next: 'whose_task_is_it'
@@ -182,7 +182,7 @@ export const ch5 = {
 
     whose_task_is_it: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'office',
       speaker: '沈老师',
       text: '「但无论如何，那是他们的课题，不是你的。」',
       next: 'days_pass'
@@ -190,7 +190,7 @@ export const ch5 = {
 
     epiphany: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'office',
       speaker: '',
       text: '"所以我一直在做他们该做的事？"',
       next: 'teacher_nods'
@@ -198,7 +198,7 @@ export const ch5 = {
 
     teacher_nods: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'office',
       speaker: '沈老师',
       text: '点头：「对。而且你知道最可怕的是什么吗？」',
       next: 'most_terrible'
@@ -206,7 +206,7 @@ export const ch5 = {
 
     most_terrible: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'office',
       speaker: '沈老师',
       text: '「你在剥夺他们成长的机会。」',
       next: 'xuhe_example'
@@ -214,7 +214,7 @@ export const ch5 = {
 
     xuhe_example: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'office',
       speaker: '沈老师',
       text: '「许禾永远学不会独立，因为你总帮她。」',
       next: 'linche_example'
@@ -222,7 +222,7 @@ export const ch5 = {
 
     linche_example: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'office',
       speaker: '沈老师',
       text: '「林澈永远意识不到问题，因为你总顺从他。」',
       next: 'guyan_example'
@@ -230,7 +230,7 @@ export const ch5 = {
 
     guyan_example: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'office',
       speaker: '沈老师',
       text: '「顾言永远不会学会好好说话，因为他发现攻击是有效的。」',
       next: 'silence'
@@ -238,7 +238,7 @@ export const ch5 = {
 
     silence: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'office',
       speaker: '',
       text: '沉默。',
       next: 'final_blow'
@@ -246,7 +246,7 @@ export const ch5 = {
 
     final_blow: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'office',
       speaker: '沈老师',
       text: '「你不是在帮他们。你是在满足自己"被需要"的感觉。」',
       next: 'inner_hit'
@@ -254,7 +254,7 @@ export const ch5 = {
 
     inner_hit: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'office',
       speaker: '',
       text: '（这句话像一记重锤。她说得对吗？我真的是在帮他们，还是在逃避说"不"？）',
       next: 'days_pass'
@@ -262,7 +262,7 @@ export const ch5 = {
 
     days_pass: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'classroom-afternoon',
       speaker: '',
       text: '【周四，第一次实践"课题分离"】',
       next: 'xuhe_approaches'
@@ -270,7 +270,7 @@ export const ch5 = {
 
     xuhe_approaches: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'classroom-afternoon',
       speaker: '许禾',
       text: '又来找你：「那几个女生还是不理我……你能再帮我看看吗？」',
       next: 'remember_teacher'
@@ -278,7 +278,7 @@ export const ch5 = {
 
     remember_teacher: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'classroom-afternoon',
       speaker: '',
       text: '（你想起沈老师的话。）',
       next: 'choice_practice'
@@ -286,7 +286,7 @@ export const ch5 = {
 
     choice_practice: {
       type: 'choice',
-      art: 'classroom',
+      art: 'classroom-afternoon',
       prompt: '你的回应：',
       choices: [
         { text: '"好，我再观察一下。"', next: 'old_pattern', effects: [{ trait: 'repair', delta: 1 }, { trait: 'autonomy', delta: -1 }] },
@@ -297,7 +297,7 @@ export const ch5 = {
 
     old_pattern: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'classroom-afternoon',
       speaker: '',
       text: '"好，我再观察一下。"\n\n许禾松了口气。你又回到了旧模式。',
       next: 'inner_failed'
@@ -305,7 +305,7 @@ export const ch5 = {
 
     inner_failed: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'classroom-afternoon',
       speaker: '',
       text: '（我又失败了。）',
       next: 'week_passes'
@@ -313,7 +313,7 @@ export const ch5 = {
 
     cold_refusal: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'classroom-afternoon',
       speaker: '',
       text: '"这是你的课题，我帮不了你。"',
       next: 'xuhe_stunned'
@@ -321,7 +321,7 @@ export const ch5 = {
 
     xuhe_stunned: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'classroom-afternoon',
       speaker: '许禾',
       text: '愣住：「你……」',
       next: 'xuhe_hurt_reaction'
@@ -329,7 +329,7 @@ export const ch5 = {
 
     xuhe_hurt_reaction: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'classroom-afternoon',
       speaker: '许禾',
       text: '「所以你真的不管我了……」',
       next: 'xuhe_leaves_crying'
@@ -337,7 +337,7 @@ export const ch5 = {
 
     xuhe_leaves_crying: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'classroom-afternoon',
       speaker: '',
       text: '她哭着走了。',
       next: 'inner_too_cold'
@@ -345,7 +345,7 @@ export const ch5 = {
 
     inner_too_cold: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'classroom-afternoon',
       speaker: '',
       text: '（我是不是太冷漠了？但……这就是边界吗？）',
       next: 'week_passes'
@@ -353,7 +353,7 @@ export const ch5 = {
 
     guide_thinking: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'classroom-afternoon',
       speaker: '',
       text: '"你觉得自己可以做些什么？"',
       next: 'xuhe_dont_know'
@@ -361,7 +361,7 @@ export const ch5 = {
 
     xuhe_dont_know: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'classroom-afternoon',
       speaker: '许禾',
       text: '愣住：「我……我不知道。」',
       next: 'continue_guiding'
@@ -369,7 +369,7 @@ export const ch5 = {
 
     continue_guiding: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'classroom-afternoon',
       speaker: '',
       text: '"那你想过为什么她们不理你吗？"',
       next: 'xuhe_guesses'
@@ -377,7 +377,7 @@ export const ch5 = {
 
     xuhe_guesses: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'classroom-afternoon',
       speaker: '许禾',
       text: '「因为……因为她们讨厌我？」',
       next: 'ask_directly'
@@ -385,7 +385,7 @@ export const ch5 = {
 
     ask_directly: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'classroom-afternoon',
       speaker: '',
       text: '"你有没有问过她们？"',
       next: 'xuhe_scared'
@@ -393,7 +393,7 @@ export const ch5 = {
 
     xuhe_scared: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'classroom-afternoon',
       speaker: '许禾',
       text: '「我不敢……」',
       next: 'clarify_help'
@@ -401,7 +401,7 @@ export const ch5 = {
 
     clarify_help: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'classroom-afternoon',
       speaker: '',
       text: '"那你希望我怎么帮你？"',
       next: 'xuhe_asks_help'
@@ -409,7 +409,7 @@ export const ch5 = {
 
     xuhe_asks_help: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'classroom-afternoon',
       speaker: '许禾',
       text: '「你能替我问吗？」',
       next: 'set_boundary'
@@ -417,7 +417,7 @@ export const ch5 = {
 
     set_boundary: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'classroom-afternoon',
       speaker: '',
       text: '你深吸一口气："不能。但我可以陪你一起去问。"',
       next: 'xuhe_reaction'
@@ -425,7 +425,7 @@ export const ch5 = {
 
     xuhe_reaction: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'classroom-afternoon',
       speaker: '许禾',
       text: '眼睛睁大：「你……你不帮我说吗？」',
       next: 'firm_boundary'
@@ -433,7 +433,7 @@ export const ch5 = {
 
     firm_boundary: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'classroom-afternoon',
       speaker: '',
       text: '你摇头："这是你的问题，你要自己面对。"',
       next: 'xuhe_cries'
@@ -441,7 +441,7 @@ export const ch5 = {
 
     xuhe_cries: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'classroom-afternoon',
       speaker: '许禾',
       text: '眼泪掉下来：「所以你也不管我了……」',
       next: 'clarify_not_abandon'
@@ -449,7 +449,7 @@ export const ch5 = {
 
     clarify_not_abandon: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'classroom-afternoon',
       speaker: '',
       text: '"我没有不管你。但我不能替你活。"',
       next: 'xuhe_leaves_crying_2'
@@ -457,7 +457,7 @@ export const ch5 = {
 
     xuhe_leaves_crying_2: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'classroom-afternoon',
       speaker: '',
       text: '她哭着走了。',
       next: 'inner_did_right'
@@ -465,7 +465,7 @@ export const ch5 = {
 
     inner_did_right: {
       type: 'dialogue',
-      art: 'classroom',
+      art: 'classroom-afternoon',
       speaker: '',
       text: '（我做对了吗？还是我太冷漠了？）',
       next: 'week_passes'
@@ -473,7 +473,7 @@ export const ch5 = {
 
     week_passes: {
       type: 'dialogue',
-      art: 'bedroom',
+      art: 'bedroom-night',
       speaker: '',
       text: '【当晚，林澈的私聊】\n\n手机震动。',
       next: 'linche_message'
@@ -481,7 +481,7 @@ export const ch5 = {
 
     linche_message: {
       type: 'dialogue',
-      art: 'bedroom',
+      art: 'bedroom-night',
       speaker: '',
       text: '【林澈】："许禾找你了？"',
       next: 'you_reply_yes'
@@ -489,7 +489,7 @@ export const ch5 = {
 
     you_reply_yes: {
       type: 'dialogue',
-      art: 'bedroom',
+      art: 'bedroom-night',
       speaker: '',
       text: '【你】："嗯。"',
       next: 'linche_says_xuhe_cried'
@@ -497,7 +497,7 @@ export const ch5 = {
 
     linche_says_xuhe_cried: {
       type: 'dialogue',
-      art: 'bedroom',
+      art: 'bedroom-night',
       speaker: '',
       text: '【林澈】："她哭着跟我说，你不愿意帮她了。"',
       next: 'linche_questions'
@@ -505,7 +505,7 @@ export const ch5 = {
 
     linche_questions: {
       type: 'dialogue',
-      art: 'bedroom',
+      art: 'bedroom-night',
       speaker: '',
       text: '【林澈】："你是不是……对她太严格了？"',
       next: 'choice_respond_linche'
@@ -513,7 +513,7 @@ export const ch5 = {
 
     choice_respond_linche: {
       type: 'choice',
-      art: 'bedroom',
+      art: 'bedroom-night',
       prompt: '你回复：',
       choices: [
         { text: '"可能吧……我再想想。"', next: 'waver', effects: [{ trait: 'autonomy', delta: -1 }, { trait: 'boundary', delta: -1 }] },
@@ -524,7 +524,7 @@ export const ch5 = {
 
     waver: {
       type: 'dialogue',
-      art: 'bedroom',
+      art: 'bedroom-night',
       speaker: '',
       text: '你开始怀疑自己。也许你真的太冷漠了？',
       next: 'night_ends'
@@ -532,7 +532,7 @@ export const ch5 = {
 
     ask_back: {
       type: 'dialogue',
-      art: 'bedroom',
+      art: 'bedroom-night',
       speaker: '',
       text: '【林澈】："我觉得……至少要安慰她吧？她现在很难过。"\n\n你盯着屏幕，不知道该怎么回复。',
       next: 'night_ends'
@@ -540,7 +540,7 @@ export const ch5 = {
 
     persist_boundary: {
       type: 'dialogue',
-      art: 'bedroom',
+      art: 'bedroom-night',
       speaker: '',
       text: '【你】："安慰不等于替她解决问题。"',
       next: 'linche_silence'
@@ -548,7 +548,7 @@ export const ch5 = {
 
     linche_silence: {
       type: 'dialogue',
-      art: 'bedroom',
+      art: 'bedroom-night',
       speaker: '',
       text: '林澈沉默了一会儿。',
       next: 'linche_says_changed'
@@ -556,7 +556,7 @@ export const ch5 = {
 
     linche_says_changed: {
       type: 'dialogue',
-      art: 'bedroom',
+      art: 'bedroom-night',
       speaker: '',
       text: '【林澈】："……你变了。"',
       next: 'choice_respond_changed'
@@ -564,7 +564,7 @@ export const ch5 = {
 
     choice_respond_changed: {
       type: 'choice',
-      art: 'bedroom',
+      art: 'bedroom-night',
       prompt: '你回复：',
       choices: [
         { text: '"对不起，我让你失望了。"', next: 'apologize', effects: [{ trait: 'autonomy', delta: -1 }] },
@@ -575,7 +575,7 @@ export const ch5 = {
 
     apologize: {
       type: 'dialogue',
-      art: 'bedroom',
+      art: 'bedroom-night',
       speaker: '',
       text: '【林澈】："没事，我理解你。"\n\n但你能感觉到他的失落。',
       next: 'night_ends'
@@ -583,7 +583,7 @@ export const ch5 = {
 
     affirm_change: {
       type: 'dialogue',
-      art: 'bedroom',
+      art: 'bedroom-night',
       speaker: '',
       text: '【林澈】："……好吧。"\n\n他没再回复。',
       next: 'inner_gentle_or_controlled'
@@ -591,7 +591,7 @@ export const ch5 = {
 
     inner_gentle_or_controlled: {
       type: 'dialogue',
-      art: 'bedroom',
+      art: 'bedroom-night',
       speaker: '',
       text: '（"温柔"？还是"好控制"？）',
       next: 'night_ends'
@@ -599,7 +599,7 @@ export const ch5 = {
 
     question_back: {
       type: 'dialogue',
-      art: 'bedroom',
+      art: 'bedroom-night',
       speaker: '',
       text: '【林澈】："你以前很温柔。"',
       next: 'inner_gentle_or_controlled'
@@ -607,7 +607,7 @@ export const ch5 = {
 
     night_ends: {
       type: 'dialogue',
-      art: 'bedroom',
+      art: 'bedroom-night',
       speaker: '',
       text: '你关掉手机，躺在床上盯着天花板。',
       next: 'inner_exhausted'
@@ -615,7 +615,7 @@ export const ch5 = {
 
     inner_exhausted: {
       type: 'dialogue',
-      art: 'bedroom',
+      art: 'bedroom-night',
       speaker: '',
       text: '（改变真的好累。）',
       next: 'chapter_end'

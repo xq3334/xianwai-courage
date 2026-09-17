@@ -7,7 +7,7 @@ export const chapter1 = {
     // 场景1：周二中午，小组讨论
     start: { 
       type: 'dialogue', 
-      art: 'classroom', 
+      art: 'classroom-day', 
       speaker: '', 
       text: '周二中午。小组四人第一次正式讨论，气氛有些紧张。', 
       next: 'lc1' 
@@ -15,7 +15,7 @@ export const chapter1 = {
 
     lc1: { 
       type: 'dialogue', 
-      art: 'classroom', 
+      art: 'classroom-day', 
       speaker: '林澈', 
       text: '「我昨晚想了一下，咱们这个题目可以这样分工——」', 
       next: 'lc2' 
@@ -23,7 +23,7 @@ export const chapter1 = {
 
     lc2: { 
       type: 'dialogue', 
-      art: 'classroom', 
+      art: 'classroom-day', 
       speaker: '', 
       text: '他开始分配任务，语速很快，看起来很有规划。你发现：你的任务已经被他定好了。', 
       next: 'gy1' 
@@ -31,7 +31,7 @@ export const chapter1 = {
 
     gy1: { 
       type: 'dialogue', 
-      art: 'classroom', 
+      art: 'classroom-day', 
       speaker: '顾言', 
       text: '「等一下，谁说你是组长？」', 
       next: 'lc3' 
@@ -39,7 +39,7 @@ export const chapter1 = {
 
     lc3: { 
       type: 'dialogue', 
-      art: 'classroom', 
+      art: 'classroom-day', 
       speaker: '林澈', 
       text: '「我……我不是组长，我只是提个建议……」', 
       next: 'gy2' 
@@ -47,7 +47,7 @@ export const chapter1 = {
 
     gy2: { 
       type: 'dialogue', 
-      art: 'classroom', 
+      art: 'classroom-day', 
       speaker: '顾言', 
       text: '「建议？你已经全分配完了。」', 
       next: 'xh1' 
@@ -55,7 +55,7 @@ export const chapter1 = {
 
     xh1: { 
       type: 'dialogue', 
-      art: 'classroom', 
+      art: 'classroom-day', 
       speaker: '', 
       text: '许禾缩着肩膀不说话。林澈看向你，眼神像在求救。', 
       next: 'choice1' 
@@ -63,7 +63,7 @@ export const chapter1 = {
 
     choice1: { 
       type: 'choice', 
-      art: 'classroom', 
+      art: 'classroom-day', 
       prompt: '你……', 
       choices: [
         { 
@@ -94,7 +94,7 @@ export const chapter1 = {
     // 分支A：帮林澈
     help_lc: { 
       type: 'dialogue', 
-      art: 'classroom', 
+      art: 'classroom-day', 
       speaker: '', 
       text: '林澈松了口气。顾言冷笑了一声。', 
       next: 'gy_out_a' 
@@ -102,7 +102,7 @@ export const chapter1 = {
 
     gy_out_a: { 
       type: 'dialogue', 
-      art: 'classroom', 
+      art: 'classroom-day', 
       speaker: '顾言', 
       text: '「行，那你们俩搭档吧，我自己做我的部分。」', 
       next: 'gy_earphone_a' 
@@ -110,7 +110,7 @@ export const chapter1 = {
 
     gy_earphone_a: { 
       type: 'dialogue', 
-      art: 'classroom', 
+      art: 'classroom-day', 
       speaker: '', 
       text: '他戴上耳机，不再参与讨论。许禾小声说：「我……我听你们的……」', 
       next: 'lc_thanks_a' 
@@ -118,7 +118,7 @@ export const chapter1 = {
 
     lc_thanks_a: { 
       type: 'dialogue', 
-      art: 'classroom', 
+      art: 'classroom-day', 
       speaker: '林澈', 
       text: '「还是你懂我。」', 
       next: 'inner_a' 
@@ -126,7 +126,7 @@ export const chapter1 = {
 
     inner_a: { 
       type: 'dialogue', 
-      art: 'classroom', 
+      art: 'classroom-day', 
       speaker: '', 
       text: '他的笑容让我不安。我是真的赞同，还是只是不想让他难堪？', 
       next: 'corridor' 
@@ -135,7 +135,7 @@ export const chapter1 = {
     // 分支B：中立
     neutral: { 
       type: 'dialogue', 
-      art: 'classroom', 
+      art: 'classroom-day', 
       speaker: '', 
       text: '林澈有点失落，顾言稍微缓和了一些。', 
       next: 'gy_ask_b' 
@@ -143,7 +143,7 @@ export const chapter1 = {
 
     gy_ask_b: { 
       type: 'dialogue', 
-      art: 'classroom', 
+      art: 'classroom-day', 
       speaker: '顾言', 
       text: '「说吧，你的方案具体是什么。」', 
       next: 'lc_retry_b' 
@@ -151,7 +151,7 @@ export const chapter1 = {
 
     lc_retry_b: { 
       type: 'dialogue', 
-      art: 'classroom', 
+      art: 'classroom-day', 
       speaker: '', 
       text: '林澈重新讲了一遍，这次语气弱了些。讨论过程中你发现：林澈的方案确实很周全，但没考虑每个人的意见。许禾始终没说话。', 
       next: 'corridor' 
@@ -160,7 +160,7 @@ export const chapter1 = {
     // 分支C：站顾言
     support_gy: { 
       type: 'dialogue', 
-      art: 'classroom', 
+      art: 'classroom-day', 
       speaker: '', 
       text: '林澈脸色变了，气氛很僵。林澈看着你，眼神里有受伤和不解。', 
       next: 'lc_hurt_c' 
@@ -168,7 +168,7 @@ export const chapter1 = {
 
     lc_hurt_c: { 
       type: 'dialogue', 
-      art: 'classroom', 
+      art: 'classroom-day', 
       speaker: '林澈', 
       text: '「行，那你们讨论吧，我听着。」', 
       next: 'gy_satisfied_c' 
@@ -176,7 +176,7 @@ export const chapter1 = {
 
     gy_satisfied_c: { 
       type: 'dialogue', 
-      art: 'classroom', 
+      art: 'classroom-day', 
       speaker: '顾言', 
       text: '「这才对。」', 
       next: 'silent_c' 
@@ -184,7 +184,7 @@ export const chapter1 = {
 
     silent_c: { 
       type: 'dialogue', 
-      art: 'classroom', 
+      art: 'classroom-day', 
       speaker: '', 
       text: '接下来的讨论里，林澈一直没说话。', 
       next: 'corridor' 
@@ -193,7 +193,7 @@ export const chapter1 = {
     // 场景2：放学后走廊
     corridor: { 
       type: 'dialogue', 
-      art: 'corridor', 
+      art: 'classroom-dusk', 
       speaker: '', 
       text: '放学后，你正在整理书包。', 
       next: 'lc_call' 
@@ -201,7 +201,7 @@ export const chapter1 = {
 
     lc_call: { 
       type: 'dialogue', 
-      art: 'corridor', 
+      art: 'classroom-dusk', 
       speaker: '林澈', 
       text: '「哎，等一下。」', 
       next: 'lc_complex' 
@@ -209,7 +209,7 @@ export const chapter1 = {
 
     lc_complex: { 
       type: 'dialogue', 
-      art: 'corridor', 
+      art: 'classroom-dusk', 
       speaker: '', 
       text: '他的表情有点复杂，欲言又止。', 
       next: 'lc_question' 
@@ -217,7 +217,7 @@ export const chapter1 = {
 
     lc_question: { 
       type: 'dialogue', 
-      art: 'corridor', 
+      art: 'classroom-dusk', 
       speaker: '林澈', 
       text: '「你是不是……觉得我太强势了？」', 
       next: 'choice2' 
@@ -225,7 +225,7 @@ export const chapter1 = {
 
     choice2: { 
       type: 'choice', 
-      art: 'corridor', 
+      art: 'classroom-dusk', 
       prompt: '你的回答是……', 
       choices: [
         { 
@@ -257,7 +257,7 @@ export const chapter1 = {
 
     comfort: { 
       type: 'dialogue', 
-      art: 'corridor', 
+      art: 'classroom-dusk', 
       speaker: '林澈', 
       text: '「我就知道，咱俩这么多年，我还不了解你？」', 
       next: 'comfort_after' 
@@ -265,7 +265,7 @@ export const chapter1 = {
 
     comfort_after: { 
       type: 'dialogue', 
-      art: 'corridor', 
+      art: 'classroom-dusk', 
       speaker: '', 
       text: '他继续用他的方式"照顾"你。', 
       next: 'tuanjian' 
@@ -273,7 +273,7 @@ export const chapter1 = {
 
     honest_soft: { 
       type: 'dialogue', 
-      art: 'corridor', 
+      art: 'classroom-dusk', 
       speaker: '林澈', 
       text: '「……我以后注意。」', 
       next: 'honest_after' 
@@ -281,7 +281,7 @@ export const chapter1 = {
 
     honest_after: { 
       type: 'dialogue', 
-      art: 'corridor', 
+      art: 'classroom-dusk', 
       speaker: '', 
       text: '他开始变得小心翼翼，但底层逻辑没变。', 
       next: 'tuanjian' 
@@ -289,7 +289,7 @@ export const chapter1 = {
 
     direct: { 
       type: 'dialogue', 
-      art: 'corridor', 
+      art: 'classroom-dusk', 
       speaker: '', 
       text: '林澈愣住，然后苦笑。', 
       next: 'direct_after' 
@@ -297,7 +297,7 @@ export const chapter1 = {
 
     direct_after: { 
       type: 'dialogue', 
-      art: 'corridor', 
+      art: 'classroom-dusk', 
       speaker: '林澈', 
       text: '「原来你一直这么想。那以后我不管了。」', 
       next: 'tuanjian' 
@@ -305,7 +305,7 @@ export const chapter1 = {
 
     tuanjian: { 
       type: 'dialogue', 
-      art: 'corridor', 
+      art: 'classroom-dusk', 
       speaker: '林澈', 
       text: '「对了，下周班里要搞团建，我帮你报名了。」', 
       next: 'try_refuse' 
@@ -313,7 +313,7 @@ export const chapter1 = {
 
     try_refuse: { 
       type: 'dialogue', 
-      art: 'corridor', 
+      art: 'classroom-dusk', 
       speaker: '', 
       text: '你：「……我不是说想自己——」', 
       next: 'interrupt' 
@@ -321,7 +321,7 @@ export const chapter1 = {
 
     interrupt: { 
       type: 'dialogue', 
-      art: 'corridor', 
+      art: 'classroom-dusk', 
       speaker: '林澈', 
       text: '「哎呀报名截止了，我怕你忘记，先帮你占上了，不想去再说。」', 
       next: 'pat' 
@@ -329,7 +329,7 @@ export const chapter1 = {
 
     pat: { 
       type: 'dialogue', 
-      art: 'corridor', 
+      art: 'classroom-dusk', 
       speaker: '', 
       text: '他拍拍你肩膀就走了。', 
       next: 'inner2' 
@@ -337,7 +337,7 @@ export const chapter1 = {
 
     inner2: { 
       type: 'dialogue', 
-      art: 'corridor', 
+      art: 'classroom-dusk', 
       speaker: '', 
       text: '为什么我说不出"我不想去"这四个字？', 
       next: 'night2' 
@@ -346,7 +346,7 @@ export const chapter1 = {
     // 场景3：周五晚上
     night2: { 
       type: 'dialogue', 
-      art: 'night-desk', 
+      art: 'bedroom-night', 
       speaker: '', 
       text: '周五晚上。躺在床上刷手机，看到小组群里的消息。', 
       next: 'draft' 
@@ -354,7 +354,7 @@ export const chapter1 = {
 
     draft: { 
       type: 'dialogue', 
-      art: 'night-desk', 
+      art: 'bedroom-night', 
       speaker: '', 
       text: '林澈发了一份他整理的"初稿"，说"大家看看有没有要补充的"。', 
       next: 'gy_msg' 
@@ -362,7 +362,7 @@ export const chapter1 = {
 
     gy_msg: { 
       type: 'dialogue', 
-      art: 'night-desk', 
+      art: 'bedroom-night', 
       speaker: '顾言', 
       text: '【群消息】你做完了？', 
       next: 'lc_reply' 
@@ -370,7 +370,7 @@ export const chapter1 = {
 
     lc_reply: { 
       type: 'dialogue', 
-      art: 'night-desk', 
+      art: 'bedroom-night', 
       speaker: '林澈', 
       text: '【群消息】也不算，就是把思路先理一下。', 
       next: 'gy_silent' 
@@ -378,7 +378,7 @@ export const chapter1 = {
 
     gy_silent: { 
       type: 'dialogue', 
-      art: 'night-desk', 
+      art: 'bedroom-night', 
       speaker: '', 
       text: '顾言没再回复。许禾发了个"辛苦了"的表情。', 
       next: 'inner3' 
@@ -386,7 +386,7 @@ export const chapter1 = {
 
     inner3: { 
       type: 'dialogue', 
-      art: 'night-desk', 
+      art: 'bedroom-night', 
       speaker: '', 
       text: '他又自己做完了。他是真的想帮忙，还是不信任我们？还是……他就是习惯掌控一切？', 
       next: 'choice3' 
@@ -394,7 +394,7 @@ export const chapter1 = {
 
     choice3: { 
       type: 'choice', 
-      art: 'night-desk', 
+      art: 'bedroom-night', 
       prompt: '你的想法是……', 
       choices: [
         { 
@@ -423,7 +423,7 @@ export const chapter1 = {
 
     rely: { 
       type: 'dialogue', 
-      art: 'night-desk', 
+      art: 'bedroom-night', 
       speaker: '', 
       text: '手机又震动了，这次是私聊。', 
       next: 'xh_msg' 
@@ -431,7 +431,7 @@ export const chapter1 = {
 
     guilt: { 
       type: 'dialogue', 
-      art: 'night-desk', 
+      art: 'bedroom-night', 
       speaker: '', 
       text: '手机又震动了，这次是私聊。', 
       next: 'xh_msg' 
@@ -439,7 +439,7 @@ export const chapter1 = {
 
     resist: { 
       type: 'dialogue', 
-      art: 'night-desk', 
+      art: 'bedroom-night', 
       speaker: '', 
       text: '手机又震动了，这次是私聊。', 
       next: 'xh_msg' 
@@ -447,7 +447,7 @@ export const chapter1 = {
 
     xh_msg: { 
       type: 'dialogue', 
-      art: 'night-desk', 
+      art: 'bedroom-night', 
       speaker: '许禾', 
       text: '【私聊】在吗？能找你聊聊吗？', 
       next: 'predict' 
@@ -455,7 +455,7 @@ export const chapter1 = {
 
     predict: { 
       type: 'dialogue', 
-      art: 'night-desk', 
+      art: 'bedroom-night', 
       speaker: '', 
       text: '你看着这条消息，有种不好的预感。', 
       next: 'end' 
