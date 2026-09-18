@@ -382,7 +382,7 @@ export const ch4 = {
 
     inner_hope: {
       type: 'dialogue',
-      art: 'classroom-afternoon',
+      art: 'clarity',
       speaker: '',
       text: '（也许……我们真的可以改变？）',
       next: 'sunday_night'
@@ -521,7 +521,7 @@ export const ch4 = {
 
     inner_cant_say: {
       type: 'dialogue',
-      art: 'bedroom-night',
+      art: 'entangled',
       speaker: '',
       text: '（我说不出口。她永远不会理解。）',
       next: 'next_day_counselor'

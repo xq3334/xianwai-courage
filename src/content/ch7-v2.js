@@ -171,7 +171,7 @@ export const ch7 = {
 
     feel_stares: {
       type: 'dialogue',
-      art: 'corridor',
+      art: 'entangled',
       speaker: '',
       text: '（你感觉所有人都在看你。走廊里有人窃窃私语。）',
       next: 'see_xuhe'
@@ -270,7 +270,7 @@ export const ch7 = {
 
     inner_tired: {
       type: 'dialogue',
-      art: 'stairwell',
+      art: 'entangled',
       speaker: '',
       text: '（我太累了。我不想再争了。）',
       next: 'days_later'
@@ -823,7 +823,7 @@ export const ch7 = {
 
     inner_cracks_but_close: {
       type: 'dialogue',
-      art: 'classroom-empty',
+      art: 'clarity',
       speaker: '',
       text: '（也许，真正的关系，就是即使有裂痕，也还愿意靠近。）',
       next: 'chapter_end'

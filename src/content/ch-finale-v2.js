@@ -107,7 +107,7 @@ export const finale = {
 
     inner2: {
       type: 'dialogue',
-      art: 'classroom-dusk',
+      art: 'clarity',
       speaker: '',
       text: '（原来，真正的自立，是敢于让别人失望。）',
       next: 'ending_quit'
@@ -173,7 +173,7 @@ export const finale = {
 
     inner4: {
       type: 'dialogue',
-      art: 'classroom-dusk',
+      art: 'entangled',
       speaker: '',
       text: '（但内心深处，你知道自己并没有真正改变。）',
       next: 'ending_maintain'

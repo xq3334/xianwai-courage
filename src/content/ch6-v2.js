@@ -104,7 +104,7 @@ export const ch6 = {
 
     inner_divided: {
       type: 'dialogue',
-      art: 'classroom-morning',
+      art: 'entangled',
       speaker: '',
       text: '（小组分裂了。而且是以我为分界线。）',
       next: 'lunch_rooftop'
@@ -422,7 +422,7 @@ export const ch6 = {
 
     inner_real_support: {
       type: 'dialogue',
-      art: 'classroom-dusk',
+      art: 'clarity',
       speaker: '',
       text: '（原来真正的支持，不是替我做事，而是看见我的努力。）',
       next: 'sunday_night'
@@ -462,7 +462,7 @@ export const ch6 = {
 
     shock: {
       type: 'dialogue',
-      art: 'bedroom-night',
+      art: 'entangled',
       speaker: '',
       text: '（震惊、愤怒、不解。）',
       next: 'message_xuhe'

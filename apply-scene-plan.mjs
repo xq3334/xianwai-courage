@@ -80,6 +80,19 @@ function resolveSceneAssignments(chapterId) {
     }
   }
 
+  // 单节点覆盖最后生效，且不参与上面的传播，所以只改这一个节点。
+  // 节点名写错时必须报错：静默跳过会让意象图看起来"配了但没生效"。
+  const overrides = plan.overrides || {};
+  for (const [nodeId, scene] of Object.entries(overrides)) {
+    if (!chapter.nodes[nodeId]) {
+      throw new Error(`${chapterId} 的 overrides 指向不存在的节点：${nodeId}`);
+    }
+    if (!chapter.nodes[nodeId].art) {
+      throw new Error(`${chapterId} / ${nodeId} 没有 art 字段，覆盖不会生效`);
+    }
+    assignments.set(nodeId, scene);
+  }
+
   return assignments;
 }
 

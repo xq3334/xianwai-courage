@@ -5,6 +5,13 @@
 // 末尾）也能拿到正确的场景，不必逐个手写。
 //
 // defaultScene 是该章入口场景，锚点之前的节点用它。
+//
+// overrides 是单节点例外：只改这一个节点，不向后传播，下一个节点回到锚点
+// 给的场景。用于 clarity / entangled 这两张意象图——它们表现的是一瞬间的
+// 心理状态，不是主角走进了另一个房间，所以只能覆盖一个节点。
+//
+// 不要手改章节文件里的 art 字段，apply-scene-plan.mjs 一跑就会覆盖回来。
+// 所有场景归属都写在这张表里。
 
 export const SCENE_PLAN = {
   prologue: {
@@ -58,6 +65,10 @@ export const SCENE_PLAN = {
       sunday_night: 'home-dining',
       escape_table: 'bedroom-night',
       next_day_counselor: 'office'
+    },
+    overrides: {
+      inner_hope: 'clarity',
+      inner_cant_say: 'entangled'
     }
   },
 
@@ -67,6 +78,10 @@ export const SCENE_PLAN = {
       opening: 'office',
       days_pass: 'classroom-afternoon',
       week_passes: 'bedroom-night'
+    },
+    overrides: {
+      inner_hit: 'entangled',
+      inner_exhausted: 'entangled'
     }
   },
 
@@ -79,6 +94,11 @@ export const SCENE_PLAN = {
       friday_meeting: 'classroom-afternoon',
       after_class: 'classroom-dusk',
       sunday_night: 'bedroom-night'
+    },
+    overrides: {
+      inner_divided: 'entangled',
+      inner_real_support: 'clarity',
+      shock: 'entangled'
     }
   },
 
@@ -92,6 +112,11 @@ export const SCENE_PLAN = {
       go_to_rooftop: 'rooftop-sunset',
       days_later: 'office',
       exam_week: 'classroom-empty'
+    },
+    overrides: {
+      feel_stares: 'entangled',
+      inner_tired: 'entangled',
+      inner_cracks_but_close: 'clarity'
     }
   },
 
@@ -108,6 +133,10 @@ export const SCENE_PLAN = {
 
   finale: {
     defaultScene: 'classroom-dusk',
-    anchors: {}
+    anchors: {},
+    overrides: {
+      inner2: 'clarity',
+      inner4: 'entangled'
+    }
   }
 };

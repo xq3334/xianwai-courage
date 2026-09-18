@@ -254,7 +254,7 @@ export const ch5 = {
 
     inner_hit: {
       type: 'dialogue',
-      art: 'office',
+      art: 'entangled',
       speaker: '',
       text: '（这句话像一记重锤。她说得对吗？我真的是在帮他们，还是在逃避说"不"？）',
       next: 'days_pass'
@@ -615,7 +615,7 @@ export const ch5 = {
 
     inner_exhausted: {
       type: 'dialogue',
-      art: 'bedroom-night',
+      art: 'entangled',
       speaker: '',
       text: '（改变真的好累。）',
       next: 'chapter_end'

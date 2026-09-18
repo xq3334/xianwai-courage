@@ -37,3 +37,7 @@ coverage/
 
 # 验证脚本临时输出
 validate-*.log
+
+# 图片生成的原始 PNG 暂存区：体积是成品 webp 的十几倍，不入库。
+# 但本地要留着 —— generate-ending-posters.mjs 靠它判断是否跳过重新生成。
+_refpng/

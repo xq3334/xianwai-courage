@@ -127,6 +127,15 @@
   opacity: 1;
 }
 
+/* 意象图：整幅呈现。线条母题延伸到画面边缘，cover 裁切会把它切掉，
+   呼吸动画的 scale(1.05) 同样会吃掉边缘，所以两个都关掉。
+   露出的部分用纸色填，让它看起来像摊在桌上的一页画，而不是没铺满的背景。 */
+.scene-photo.is-imagery {
+  object-fit: contain;
+  background: var(--paper);
+  animation: ink-settle 1.2s ease both;
+}
+
 .title-art-image {
   width: 100%;
   height: 100%;

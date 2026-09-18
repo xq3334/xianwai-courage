@@ -15,6 +15,15 @@ const SCENE_ALIASES = {
   default: 'classroom-day',
 };
 
+// 意象场景：表现心理状态的抽象水彩图，不是主角所在的物理空间。
+// 这类背景上不放立绘 —— 写实立绘站在简笔小人和线条母题上会像渲染错误，
+// 而且「此刻没有人、只有情绪」本身就是这两张图要表达的东西。
+const IMAGERY_SCENES = new Set(['clarity', 'entangled']);
+
+export function isImageryScene(sceneId) {
+  return IMAGERY_SCENES.has(resolveSceneFile(sceneId));
+}
+
 // 说话人 → 立绘文件前缀
 export const SPEAKER_PORTRAITS = {
   '林澈': 'linche',
@@ -33,6 +42,7 @@ const BASELINE_CHARACTERS = [
 ];
 
 // 剧本实际用到的场景，按出场次数排序。切背景前没缓存会闪白，所以全部预热。
+// 新增场景图后必须往这里补，check-scene-assets.mjs 会校验这张表和剧本一致。
 const BASELINE_SCENES = [
   'classroom-day',
   'classroom-afternoon',
@@ -48,7 +58,9 @@ const BASELINE_SCENES = [
   'home-dining',
   'library',
   'corridor',
-  'classroom-empty'
+  'classroom-empty',
+  'entangled',
+  'clarity'
 ];
 
 export function resolveSceneFile(sceneId) {
@@ -91,13 +103,16 @@ export function renderStageArt(sceneId, characters = []) {
   // 同一张背景连续出现时不重画，避免每句台词都淡入一次
   if (sceneFile !== currentSceneFile) {
     currentSceneFile = sceneFile;
+    // 意象图整幅呈现（线条母题延伸到画面边缘，cover 裁切会把它切掉）
+    const photoClass = isImageryScene(sceneId) ? 'scene-photo is-imagery' : 'scene-photo';
     backdrop.innerHTML =
-      `<img class="scene-photo" src="${SCENE_PATH}/${sceneFile}.${IMAGE_EXTENSION}" alt="">`;
+      `<img class="${photoClass}" src="${SCENE_PATH}/${sceneFile}.${IMAGE_EXTENSION}" alt="">`;
     const image = backdrop.querySelector('.scene-photo');
     requestAnimationFrame(() => image.classList.add('is-shown'));
   }
 
-  renderCast(cast, characters);
+  // 意象场景清空立绘层，由这里统一兜住，调用方不必记得这条规则
+  renderCast(cast, isImageryScene(sceneId) ? [] : characters);
 }
 
 function renderCast(cast, characters) {
